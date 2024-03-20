@@ -1,0 +1,31 @@
+{% extends 'base.html' %} {% block title %}{{ topic_name | capitalize }}
+Playlist{% endblock %} {% block content %}
+<section class="py-20 bg-gray-100">
+  <div class="container mx-auto">
+    <h2 class="text-center text-3xl font-bold mb-10">
+      {{ topic_name | replace('_', ' ') | capitalize }}
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {% for course in courses %}
+      <div class="rounded overflow-hidden shadow-lg bg-white">
+        <img class="w-full" src="{{ course.image }}" alt="{{ course.name }}" />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">{{ course.name }}</div>
+          <p class="text-gray-700 text-base truncate">
+            {{ course.description }}
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <a
+            href="{{ course.link }}"
+            target="_blank"
+            class="inline-block bg-black text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"
+            >Watch on YouTube</a
+          >
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
