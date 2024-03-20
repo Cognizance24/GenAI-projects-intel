@@ -1,4 +1,7 @@
-{% extends 'base.html' %} {% block title %}Home - BrainByte{% endblock %} 
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block title %}Home - BrainByte{% endblock %} 
 {% block content %}
 <section class="text-center py-20 bg-black text-white">
   <div class="container mx-auto">
@@ -59,26 +62,26 @@
   <div class="container mx-auto">
     <h2 class="text-center text-3xl font-bold mb-10">Featured Courses</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-      {% for topic, _ in all_courses.items() %}
+      {% for topic, _ in all_courses.items %}
       <div class="rounded overflow-hidden shadow-lg bg-white">
         <div class="flex justify-center">
           <img
-            src="{{ url_for('static', filename='images/' ~ topic.lower().replace(' ', '_') ~ '.png') }}"
-            alt="{{ topic | capitalize }}"
+            {% comment %} src="{{ url_for('static', filename='images/' + topic.lower().replace(' ', '_') + '.png') }}" {% endcomment %}
+            alt="{{ topic }}"
             class="w-48 h-48 object-cover"
           />
         </div>
 
         <div class="px-6 py-4">
-          <div class="font-bold text-xl mb-2">{{ topic | capitalize }}</div>
+          <div class="font-bold text-xl mb-2">{{ topic }}</div>
 
           <p class="text-gray-700 text-base">
-            Explore our {{ topic | capitalize }} courses and content.
+            Explore our {{ topic }} courses and content.
           </p>
         </div>
         <div class="px-6 pt-4 pb-2">
           <a
-            href="{{ url_for('show_topic', topic_name=topic) }}"
+            {% comment %} href="{{ url_for('show_topic', topic_name=topic) }}" {% endcomment %}
             class="inline-block bg-black text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"
             >Learn More</a
           >

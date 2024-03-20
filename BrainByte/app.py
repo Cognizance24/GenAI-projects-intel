@@ -1,9 +1,9 @@
-# from flask import Flask, render_template
+from flask import Flask, render_template
 import requests
 import os
 from dotenv import load_dotenv
 
-# app = Flask(__name__)
+app = Flask(__name__)
 load_dotenv()
 
 topics = {
@@ -35,11 +35,11 @@ def get_playlist_items(playlist_id, api_key):
     
     return courses
 
-# @app.route('/')
-# def home():
-#     api_key = os.getenv('YOUTUBE_API_KEY')
-#     all_courses = get_courses_for_all_topics(api_key, topics)
-#     return render_template('index.html', all_courses=all_courses)
+@app.route('/')
+def home():
+    api_key = os.getenv('YOUTUBE_API_KEY')
+    all_courses = get_courses_for_all_topics(api_key, topics)
+    return render_template('index.html', all_courses=all_courses)
 
 def get_courses_for_all_topics(api_key, topics):
     all_courses = {}
@@ -48,15 +48,15 @@ def get_courses_for_all_topics(api_key, topics):
         all_courses[topic.replace("_", " ").capitalize()] = courses
     return all_courses
 
-# @app.route('/topic/<topic_name>')
-# def show_topic(topic_name):
-#     api_key = os.getenv('YOUTUBE_API_KEY')
-#     topic_formatted = topic_name.replace(" ", "_").lower() 
-#     playlist_id = topics.get(topic_formatted)
-#     if not playlist_id:
-#         return "Topic not found", 404
-#     courses = get_playlist_items(playlist_id, api_key)
-#     return render_template('playlist.html', courses=courses, topic_name=topic_name)
+@app.route('/topic/<topic_name>')
+def show_topic(topic_name):
+    api_key = os.getenv('YOUTUBE_API_KEY')
+    topic_formatted = topic_name.replace(" ", "_").lower() 
+    playlist_id = topics.get(topic_formatted)
+    if not playlist_id:
+        return "Topic not found", 404
+    courses = get_playlist_items(playlist_id, api_key)
+    return render_template('playlist.html', courses=courses, topic_name=topic_name)
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True)

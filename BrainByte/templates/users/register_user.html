@@ -1,0 +1,54 @@
+{% extends 'users/base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="card mx-auto" style="width: 40rem;">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body">
+        <h5 class="card-title">Hey! Register as a customer to use the ticket app</h5>
+
+{#        {% render_field form.username.errors %}#}
+        {% render_field form.email.errors %}
+        {#        {% render_field form.password1.errors %}#}
+{#        {% render_field form.password2.errors %} {% endcomment %}#}
+
+        <form method='POST'>
+            {% csrf_token %}
+            <div class="mb-3">
+
+            <label for="form.email" class="form-label">Email</label>
+                {#{{ form.email|add_error_class:"error-border" }}#}
+                {% render_field form.email class="form-control" %}
+                {#                {{ form.email }}#}
+            </div>
+
+            <div class="mb-3">
+                <label for="form.username" class="form-label">Username</label>
+                {#{{ form.username|add_error_class:"error-border" }}#}
+                {% render_field form.username class="form-control" %} 
+{#                {{ form.username }}#}
+            </div>
+
+            <div class="mb-3">
+                <label for="form.password1" class="form-label">Password</label>
+                {#{{ form.password1|add_error_class:"error-border" }}#}
+               {% render_field form.password1 class="form-control" %}
+{#                {{ form.password1 }}#}
+            </div>
+
+            <div class="mb-3">
+                <label for="form.password2" class="form-label">Confirm Password</label>
+                {#{{ form.password2|add_error_class:"error-border" }}#}
+                {% render_field form.password2 class="form-control" %}
+{#                {{ form.password2 }}#}
+            </div>
+            
+            <button class="btn btn-primary">Submit</button>
+        </form>
+        
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+</div>
+{% endblock content %}

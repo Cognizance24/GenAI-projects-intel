@@ -1,1 +1,28 @@
-<h1>Login</h1>
+{% extends 'users/base.html' %}
+
+{% block content %}
+<div class="card mx-auto" style="width: 40rem;">
+    <!-- <img src="..." class="card-img-top" alt="..."> -->
+    <div class="card-body">
+        <h5 class="card-title"> Login to continue! </h5>
+
+        <form method='POST'>
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="Username" class="form-label">Username</label>
+                <input type="username" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            
+            <button class="btn btn-primary">Submit</button>
+        </form>
+        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+            content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a> -->
+    </div>
+</div>
+{% endblock content %}
