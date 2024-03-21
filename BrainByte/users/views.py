@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from .form import RegisterUserForm
-
+from home.views import query_view
 # register a customer
 def register_user(request):
     if request.method == 'POST':
@@ -46,4 +46,5 @@ def logout_user(request):
 
 def show_profile(request):
     messages.info(request,'User profile section')
-    return render(request,'users/profile.html')
+    context = {'query_view':query_view}
+    return render(request,'users/profile.html', context=context)
