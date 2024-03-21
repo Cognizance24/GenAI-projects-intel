@@ -1,8 +1,5 @@
-{% extends 'base.html' %} 
-{% load static %}
-
-{% block title %}Home - BrainByte{% endblock %} 
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block title %}Home -
+BrainByte{%endblock %} {% block content %}
 <section class="text-center py-20 bg-black text-white">
   <div class="container mx-auto">
     <h1 class="text-5xl font-bold">Welcome to BrainByte</h1>
@@ -10,7 +7,7 @@
       Your journey to personalized learning starts here.
     </p>
     <a
-      href="/signup"
+      href="{% url 'login' %}"
       class="mt-10 inline-block bg-white text-black px-8 py-3 text-sm font-semibold rounded"
       >Get Started</a
     >
@@ -66,7 +63,16 @@
       <div class="rounded overflow-hidden shadow-lg bg-white">
         <div class="flex justify-center">
           <img
-            {% comment %} src="{{ url_for('static', filename='images/' + topic.lower().replace(' ', '_') + '.png') }}" {% endcomment %}
+            {%
+            comment
+            %}
+            src="{% static 'images/'|add:topic|add:'.png' %}"
+            alt="{{ topic }}"
+            class="w-full h-48 object-cover"
+            alt="Python"
+            {%
+            endcomment
+            %}
             alt="{{ topic }}"
             class="w-48 h-48 object-cover"
           />
@@ -81,7 +87,13 @@
         </div>
         <div class="px-6 pt-4 pb-2">
           <a
-            {% comment %} href="{{ url_for('show_topic', topic_name=topic) }}" {% endcomment %}
+            {%
+            comment
+            %}
+            href="{% url 'show_topic' topic_name=topic %}"
+            {%
+            endcomment
+            %}
             class="inline-block bg-black text-white rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2"
             >Learn More</a
           >

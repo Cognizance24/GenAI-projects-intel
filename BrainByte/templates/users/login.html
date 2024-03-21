@@ -1,28 +1,58 @@
-{% extends 'users/base.html' %}
+{% extends 'users/base.html' %} {% block content %}
+<div
+  class="flex flex-col justify-center items-center min-h-screen py-12 bg-gray-50"
+>
+  <div
+    class="mx-auto p-8 w-full max-w-md bg-white rounded-lg border border-gray-200 shadow-md"
+  >
+    <h5 class="mb-4 text-lg font-medium text-gray-900">Login to continue!</h5>
 
-{% block content %}
-<div class="card mx-auto" style="width: 40rem;">
-    <!-- <img src="..." class="card-img-top" alt="..."> -->
-    <div class="card-body">
-        <h5 class="card-title"> Login to continue! </h5>
+    <form method="POST" class="space-y-4">
+      {% csrf_token %}
+      <div>
+        <label
+          for="Username"
+          class="block mb-2 text-sm font-medium text-gray-900"
+          >Username</label
+        >
+        <input
+          type="username"
+          name="username"
+          id="exampleInputEmail1"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          required
+        />
+      </div>
 
-        <form method='POST'>
-            {% csrf_token %}
-            <div class="mb-3">
-                <label for="Username" class="form-label">Username</label>
-                <input type="username" name="username" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            </div>
+      <div>
+        <label
+          for="exampleInputPassword1"
+          class="block mb-2 text-sm font-medium text-gray-900"
+          >Password</label
+        >
+        <input
+          type="password"
+          name="password"
+          id="exampleInputPassword1"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          required
+        />
+      </div>
 
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            
-            <button class="btn btn-primary">Submit</button>
-        </form>
-        <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-            content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a> -->
-    </div>
+      <div class="flex justify-between items-center">
+        <button
+          type="submit"
+          class="px-4 py-2 bg-black hover:bg-gray-700 text-white text-sm font-medium rounded-lg"
+        >
+          Login
+        </button>
+        <a
+          href="{% url 'register-user' %}"
+          class="px-4 py-2 bg-black hover:bg-gray-700 text-white text-sm font-medium rounded-lg"
+          >Sign Up</a
+        >
+      </div>
+    </form>
+  </div>
 </div>
 {% endblock content %}
