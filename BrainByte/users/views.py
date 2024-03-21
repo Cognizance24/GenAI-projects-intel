@@ -31,6 +31,7 @@ def login_user(request):
         if user is not None and user.is_active:
             login(request,user)
             messages.info(request,'Logged in successfully! Please enjoy your session')
+            return redirect('show_profile')
         else:
             messages.warning(request,'Something went wrong! Check your inputs')
             return redirect('login')
@@ -42,3 +43,7 @@ def logout_user(request):
     logout(request)
     messages.info(request,'Logged out successfully! Please login to continue.')
     return redirect('login')
+
+def show_profile(request):
+    messages.info(request,'User profile section')
+    return render(request,'users/profile.html')
