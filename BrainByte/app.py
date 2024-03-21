@@ -9,7 +9,10 @@ load_dotenv()
 topics = {
     "python": "PL-osiE80TeTt2d9bfVyTiXJA-UTHn6WwU",
     "data_science": "PLeo1K3hjS3us_ELKYSj_Fth2tIEkdKXvV",
-    "web_development": "PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w"
+    "web_development": "PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w",
+    "cyber_security":"PLhQjrBD2T383Cqo5I1oRrbC1EKRAKGKUE",
+    "iot":"PL9ooVrP1hQOGccfBbP5tJWZ1hv5sIUWJl",
+    "cloud_computing":"PL9ooVrP1hQOFtZ5oAAeOgi_nH-txMcDMu"
 }
 
 def get_playlist_items(playlist_id, api_key):
@@ -17,7 +20,7 @@ def get_playlist_items(playlist_id, api_key):
     params = {
         "part": "snippet",
         "playlistId": playlist_id,
-        "maxResults": 12,
+        "maxResults": 50,
         "key": api_key
     }
     response = requests.get(url, params=params)
@@ -45,7 +48,7 @@ def get_courses_for_all_topics(api_key, topics):
     all_courses = {}
     for topic, playlist_id in topics.items():
         courses = get_playlist_items(playlist_id, api_key)
-        all_courses[topic.replace("_", " ").capitalize()] = courses
+        all_courses[topic] = courses
     return all_courses
 
 @app.route('/topic/<topic_name>')

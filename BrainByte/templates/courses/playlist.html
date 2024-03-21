@@ -1,14 +1,16 @@
-{% extends 'base.html' %} {% block title %}{{ topic_name | capitalize }}
-Playlist{% endblock %} {% block content %}
+{% extends 'base.html' %} {% block title %}{{ topic_name }} Playlist
+{%endblock%} {% block content %}
 <section class="py-20 bg-gray-100">
   <div class="container mx-auto">
-    <h2 class="text-center text-3xl font-bold mb-10">
-      {{ topic_name | replace('_', ' ') | capitalize }}
-    </h2>
+    <h2 class="text-center text-3xl font-bold mb-10">{{ topic_name }}</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       {% for course in courses %}
       <div class="rounded overflow-hidden shadow-lg bg-white">
-        <img class="w-full" src="{{ course.image }}" alt="{{ course.name }}" />
+        <img
+          class="w-full h-48 object-cover"
+          src="{{ course.image }}"
+          alt="{{ course.name }}"
+        />
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2">{{ course.name }}</div>
           <p class="text-gray-700 text-base truncate">
@@ -24,6 +26,8 @@ Playlist{% endblock %} {% block content %}
           >
         </div>
       </div>
+      {% empty %}
+      <p>No courses available for this topic.</p>
       {% endfor %}
     </div>
   </div>
