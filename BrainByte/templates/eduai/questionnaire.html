@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<meta name="csrf-token" content="{{ csrf_token }}">
 <script>
 
 var questions = [
@@ -151,12 +152,15 @@ var questions = [
 </script>
 
 <div id="questionnaireForm" class="my-4 space-y-4 mx-4"></div>
-
-<button onclick="submitForm()" class="my-4 mx-4  px-4 py-2 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-opacity-75">
+<form method="post" action="{% url 'submit_questionnaire' %}">
+{% csrf_token %}
+<button class="my-4 mx-4  px-4 py-2 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-opacity-75">
     Submit
 </button>
+</form>
 
 <script>
+const csrftoken = document.querySelector('[name=csrf-token]').content;
 function renderQuestions() {
     var formContainer = document.getElementById('questionnaireForm');
     questions.forEach(function(question, index) {
@@ -195,23 +199,25 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function submitForm() {
+    console.log("submitForm called");
     var formData = {};
     questions.forEach(function(question, index) {
         var inputs = document.querySelectorAll(`input[name="question${index}"]:checked`);
         var answers = Array.from(inputs).map(input => input.value);
         formData[`question${index}`] = answers;
     });
-   
-    fetch('/form_submission_url', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRFToken': '{{ csrf_token }}'
-        },
-        body: JSON.stringify(formData)
-    }).then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error('Error:', error));
+    fetch('/eduai/submit_questionnaire/', {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json',
+    'X-CSRFToken': csrftoken
+},
+    body: JSON.stringify(formData)
+}).then(response => response.json())
+  .then(data => {
+      console.log(data);
+  })
+  .catch(error => console.error('Error:', error));
 }
 </script>
 

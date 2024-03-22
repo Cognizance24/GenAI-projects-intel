@@ -12,7 +12,10 @@ topics = {
     "web_development": "PLu0W_9lII9agq5TrH9XLIKQvv0iaF2X3w",
     "cyber_security":"PLhQjrBD2T383Cqo5I1oRrbC1EKRAKGKUE",
     "iot":"PL9ooVrP1hQOGccfBbP5tJWZ1hv5sIUWJl",
-    "cloud_computing":"PL9ooVrP1hQOFtZ5oAAeOgi_nH-txMcDMu"
+    "cloud_computing":"PL9ooVrP1hQOFtZ5oAAeOgi_nH-txMcDMu",
+    "app_development":"PLUhfM8afLE_Ok-0Lx2v9hfrmbxi3GgsX",
+    "graphic_design":"PLW-zSkCnZ-gBA67ZtNUjIMfc_kwLo3MET",
+    "video_editing":"PLW-zSkCnZ-gABGZU8--ISUauyewG40Yex"
 }
 
 def get_playlist_items(playlist_id, api_key):
