@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'home',
     'users',
     'courses',
-
+    'eduai',
     'widget_tweaks',
 ]
 

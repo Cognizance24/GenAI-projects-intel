@@ -1,56 +1,30 @@
-{% extends 'users/base.html' %}
+{% extends 'base.html' %}
+
+{% block title %}User Profile{% endblock %}
+
 {% block content %}
-<div
-  class="flex-col justify-center items-center min-h-screen py-12 bg-gray-50"
->
-  <div
-    class="mx-auto p-8 w-full max-w-md bg-white rounded-lg border border-gray-200 shadow-md"
-  >
-    <h5 class="mb-4 text-lg font-medium text-gray-900">Welcome to BrainByte!</h5>
 
-      {% comment %} <div>
-        <label
-          for="Username"
-          class="block mb-2 text-sm font-medium text-gray-900"
-          >Username</label
-        >
-        <input
-          type="username"
-          name="username"
-          id="exampleInputEmail1"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-          required
-        />
-      </div> {% endcomment %}
+    <h5 class="mx-4 my-4 text-2xl font-bold text-gray-900 flex justify-center">Welcome to BrainByte!</h5>
 
-      {% comment %} <div>
-        <label
-          for="exampleInputPassword1"
-          class="block mb-2 text-sm font-medium text-gray-900"
-          >Password</label
-        >
-        <input
-          type="password"
-          name="password"
-          id="exampleInputPassword1"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-          required
-        />
-      </div> {% endcomment %}
-
-      <div class="flex justify-between items-center">
-        <button
-          type="submit"
-          class="px-4 py-2 bg-black hover:bg-gray-700 text-white text-sm font-medium rounded-lg"
-        >
-          Checkout EduAI
-        </button>
-
-        <a
-        href="{% url 'query_view' %}"
-        class="px-4 py-2 bg-black hover:bg-gray-700 text-white text-sm font-medium rounded-lg"
-        >Go to EduAI Chatbot</a>
+    <div class="container mx-auto mt-10">
+      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <h2 class="text-xl mb-4">Your Profile</h2>
+          <p><strong>Username:</strong> {{ user.username }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
       </div>
   </div>
-</div>
+  
+  <div class="flex-col justify-center items-center min-h-screen py-12 bg-gray-50">
+    <div class="mx-auto p-8 w-full max-w-md bg-white rounded-lg border border-gray-200 shadow-md">
+      <div class="flex justify-between items-center">
+        <button type="submit" class="px-4 py-2 bg-black hover:bg-gray-700 text-white text-sm font-medium rounded-lg">
+          Checkout EduAI
+        </button>
+        <a href="{% url 'query_view' %}" class="px-4 py-2 bg-black hover:bg-gray-700 text-white text-sm font-medium rounded-lg">
+          Go to EduAI Chatbot
+        </a>
+      </div>
+    </div>
+  </div>
+
 {% endblock content %}

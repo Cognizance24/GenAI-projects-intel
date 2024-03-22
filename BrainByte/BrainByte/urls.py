@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('users.urls')),
     path('courses/', include('courses.urls')),
+    path('eduai/', include('eduai.urls')),
 ]

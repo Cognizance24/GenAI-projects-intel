@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<script>
+
+var questions = [
+    {
+        "question": "What are your main goals for learning? (Select all that apply)",
+        "type": "multiple-choice",
+        "choices": [
+            "Career advancement",
+            "Personal development",
+            "Academic achievement",
+            "Learning a new skill/hobby"
+        ]
+    },
+    {
+        "question": "Which of the following best describes your preferred learning method?",
+        "type": "multiple-choice",
+        "choices": [
+            "Visual (Spatial): You prefer using pictures, images, and spatial understanding.",
+            "Aural (Auditory-Musical): You prefer using sound and music.",
+            "Verbal (Linguistic): You prefer using words, both in speech and writing.",
+            "Physical (Kinesthetic): You prefer using your body, hands and sense of touch."
+        ]
+    },
+    {
+        "question": "Which of the following subjects are you most interested in? (Select all that apply)",
+        "type": "multiple-choice",
+        "choices": [
+            "Science and Technology",
+            "Arts and Humanities",
+            "Business and Economics",
+            "Mathematics"
+        ]
+    },
+    {
+        "question": "How do you prefer to assess your understanding of a subject?",
+        "type": "multiple-choice",
+        "choices": [
+            "Multiple choice quizzes",
+            "Written assignments",
+            "Projects or practical applications",
+            "Group discussions"
+        ]
+    },
+    {
+        "question": "How important is the flexibility of schedule in your learning?",
+        "type": "multiple-choice",
+        "choices": [
+            "Very important",
+            "Somewhat important",
+            "Not important"
+        ]
+    },
+    {
+        "question": "Do you prefer learning...",
+        "type": "multiple-choice",
+        "choices": [
+            "At your own pace",
+            "In a structured schedule",
+            "A mix of both"
+        ]
+    },
+    {
+        "question": "How do you prefer to interact with instructors and peers?",
+        "type": "multiple-choice",
+        "choices": [
+            "Online forums and chat",
+            "Video calls and conferences",
+            "In-person meetings",
+            "I prefer to learn independently"
+        ]
+    },
+    {
+        "question": "What type of content helps you learn best?",
+        "type": "multiple-choice",
+        "choices": [
+            "Video lectures",
+            "Textual materials (articles, books)",
+            "Interactive content (quizzes, simulations)",
+            "Audio materials (podcasts, audiobooks)"
+        ]
+    },
+    {
+        "question": "How important are social aspects (like learning in groups) to you?",
+        "type": "multiple-choice",
+        "choices": [
+            "Very important",
+            "Somewhat important",
+            "Not important"
+        ]
+    },
+    {
+        "question": "Which technology areas are you interested in learning? (Select all that apply)",
+        "type": "multiple-choice",
+        "choices": [
+            "Software development (e.g., programming languages, web development)",
+            "Data science (e.g., machine learning, big data, analytics)",
+            "Cybersecurity (e.g., ethical hacking, security protocols)",
+            "Cloud computing (e.g., AWS, Google Cloud Platform)",
+            "Blockchain technology",
+            "Artificial Intelligence and Robotics",
+            "Internet of Things (IoT)"
+        ]
+    },
+    {
+        "question": "What is your experience level with technology and programming?",
+        "type": "multiple-choice",
+        "choices": [
+            "Beginner (I have little to no experience)",
+            "Intermediate (I have some projects and understanding of basic concepts)",
+            "Advanced (I have substantial experience and have completed multiple projects)"
+        ]
+    },
+    {
+        "question": "How do you prefer to learn new technology skills?",
+        "type": "multiple-choice",
+        "choices": [
+            "Through structured courses (online or in-person)",
+            "By working on personal projects and applying what I learn",
+            "Through reading documentation and technical articles",
+            "By participating in tech communities and forums",
+            "Through video tutorials and tech talks"
+        ]
+    },
+    {
+        "question": "How do you stay updated with new technology trends?",
+        "type": "multiple-choice",
+        "choices": [
+            "Tech news websites and blogs",
+            "Online forums and communities (e.g., Reddit, Hacker News)",
+            "Social media (e.g., Twitter feeds of tech influencers)",
+            "Podcasts and YouTube channels focused on technology",
+            "Professional networks (e.g., LinkedIn, tech conferences)"
+        ]
+    },
+    {
+        "question": "What challenges do you face when learning about new technologies? (Select all that apply)",
+        "type": "multiple-choice",
+        "choices": [
+            "Finding high-quality, up-to-date resources",
+            "Understanding complex concepts without guidance",
+            "Applying theoretical knowledge to practical projects",
+            "Staying motivated and disciplined in self-paced learning environments",
+            "Balancing learning with other responsibilities (work, studies, etc.)"
+        ]
+    }
+];
+
+</script>
+
+<div id="questionnaireForm" class="my-4 space-y-4 mx-4"></div>
+
+<button onclick="submitForm()" class="my-4 mx-4  px-4 py-2 bg-black text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-opacity-75">
+    Submit
+</button>
+
+<script>
+function renderQuestions() {
+    var formContainer = document.getElementById('questionnaireForm');
+    questions.forEach(function(question, index) {
+        var questionElement = document.createElement('div');
+        questionElement.classList.add('flex', 'flex-col');
+        
+        var questionLabel = document.createElement('p');
+        questionLabel.innerText = question.question;
+        questionLabel.classList.add('font-semibold', 'mb-2');
+        questionElement.appendChild(questionLabel);
+        
+        if (question.type === 'multiple-choice') {
+            question.choices.forEach(function(choice) {
+                var label = document.createElement('label');
+                label.classList.add('inline-flex', 'items-center', 'mt-3');
+                
+                var input = document.createElement('input');
+                input.setAttribute('type', 'checkbox');
+                input.setAttribute('name', `question${index}`);
+                input.setAttribute('value', choice);
+                input.classList.add('form-checkbox', 'h-5', 'w-5', 'text-gray-600');
+                
+                var choiceText = document.createTextNode(` ${choice}`);
+                label.appendChild(input);
+                label.appendChild(choiceText);
+                
+                questionElement.appendChild(label);
+            });
+        }
+        formContainer.appendChild(questionElement);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    renderQuestions();
+});
+
+function submitForm() {
+    var formData = {};
+    questions.forEach(function(question, index) {
+        var inputs = document.querySelectorAll(`input[name="question${index}"]:checked`);
+        var answers = Array.from(inputs).map(input => input.value);
+        formData[`question${index}`] = answers;
+    });
+   
+    fetch('/form_submission_url', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRFToken': '{{ csrf_token }}'
+        },
+        body: JSON.stringify(formData)
+    }).then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.error('Error:', error));
+}
+</script>
+
+{% endblock %}
