@@ -28,6 +28,7 @@ BrainByte is an AI-powered education platform designed to help students discover
 
 - Install Python: [Download Python](https://www.python.org/downloads/)
 - Install Git: [Download Git](https://git-scm.com/downloads)
+- Setup .env file in project root which includes YOUTUBE_API_v3 key
 
 ### Installation
 
@@ -44,12 +45,16 @@ BrainByte is an AI-powered education platform designed to help students discover
     pip install -r requirements.txt
 
 ### Running the Server
+1. **Running the chatbot server:**
+    ```bash
+    cd chatbot
+    python chatbot.py
 
-1. **Start the Django server:**
+2. **Start the Django server:**
     ```bash
     python manage.py runserver
 
-2. Access BrainByte in your web browser at **http://127.0.0.1:8000/**
+3. Access BrainByte in your web browser at **http://127.0.0.1:8000/**
 
 ## Contributing
 
