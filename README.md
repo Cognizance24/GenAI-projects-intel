@@ -22,7 +22,11 @@ Our pipeline involves the following steps:
 
 - Contains the jupyter notebook for the Interactive Storyteller project.
 - Documentation files, including this README.
-
+- Sample output images folder corresponding to the initial user prompt-
+  Name of characters along with their description- Anna is pretty girl with long hair, short height  and  Peter is a handsome boy with short hair, blue eyes.
+  Plot- The characters were in a relationship initially, but Peter cheated on Anna, Anna conspired to kill Peter.
+  Theme- Romance, Thriller, Big City setting.
+  ### Note- Since Text to Image models are still under research, very precise images werent produced, but we have tried to establish a sense of narrative coherence using audio playback when each image is shown.
 ## Usage
 
 To use the Interactive Storyteller:
