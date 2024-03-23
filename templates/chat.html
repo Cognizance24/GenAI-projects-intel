@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type = "image/x-icon" href = "static\logo.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Cure Crafter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            font-family: 'sans-serif';
+        }
+        .heading {
+            color: green;
+            font-size: 4vw;
+            text-align: center;
+        }
+        #chatbox {
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            
+        }
+        .botmessage {
+            font-size: 16px;
+            text-align: left;
+            line-height: 25px;
+            color: green;
+        }
+        .userinput {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+            text-align: center;
+            position: fixed;
+            bottom: 10px;
+        }
+        #textInput {
+            border:3px solid white;
+            border-bottom: 3px dotted #657889;
+            font-size: 16px;
+            width: 70%;
+            padding: 10px;
+        }
+        #buttonInput {
+            cursor: pointer;
+            padding: 5px;
+            font-size: 16px;
+            padding: 10px;
+            border:3px solid rgb(35, 155, 35);
+            background-color: rgb(22, 202, 22);
+            color: white;
+            border-radius: 10px;
+            width:10%;
+            transition: all ease-in-out 0.3s;
+        }
+        #buttonInput:hover{
+            border-radius: 2rem;
+            box-shadow: 10px 5px 5px green;
+
+        }
+
+        .usermessage{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar " style="background-color: #eff9e7">
+        <div class="container-fluid">
+          <a class="navbar-brand link-dark" href="index.html">
+            <img src="/static/weblogo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"/>
+            CureCrafter
+          </a>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link " aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="chat.html">Chat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="true">Settings</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Mode</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+              </ul>
+            </li>
+            <button class="btn btn-outline-success" type="submit">Sign Up</button>
+          </ul>
+        </div>
+      </nav>
+
+    <div class="heading">Welcome to Chat Area</div>
+    <div>
+        <div id="chatbox">
+            <p class="botmessage"><span> Hi there!!</span></p>
+        </div>
+        <div class="userinput">
+            <input id="textInput" type="text" name="usermessage" placeholder="Type your message...">
+            <button type="button" id="buttonInput" onclick="fetchData()">Send</button>
+        </div>
+    </div>
+    
+    <script>
+
+        function fetchData() {
+                const inputData = document.getElementById('textInput').value;
+                const chatbox = document.getElementById('chatbox');
+                const usrmessage = document.createElement('p');
+                usrmessage.className = 'usermessage';
+                usrmessage.innerHTML = `<span>You:${inputData}</span>`;
+                chatbox.appendChild(usrmessage);
+                inputData.value="";
+                const url = `https://cure-crafter.onrender.com/ask?query=${encodeURIComponent(inputData)}`;
+                fetch(url)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        const chatbox = document.getElementById('chatbox');
+                        const message = document.createElement('p');
+                        message.className = 'botmessage';
+                        message.innerHTML = `<span>Cure Crafter:${JSON.stringify(data)}</span>`;
+                        chatbox.appendChild(message);
+                        
+
+                        // Clear input box
+                        document.getElementById('textInput').value = '';
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the fetch operation:', error);
+                    });
+            }
+        </script>
+       
+</body>
+</html>

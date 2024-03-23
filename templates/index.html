@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="icon" type = "image/x-icon" href = "static\logo.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>CureCrafter</title>
+</head>
+<style>
+    .heading{
+        margin-bottom: 0px;
+        padding-top: 48px;
+        font-size: 5rem;
+        color:rgb(123, 168, 55)
+        
+    }
+    .msg{
+      display: flex;
+      padding-right: 10vw;
+      justify-content: space-between;
+      align-items: center;
+      padding-left: 10vw;
+    }
+    #message{
+      font-size: 1.4rem;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    .chat{
+      display: flex;
+      justify-content: center;
+    }
+    .go{
+      background-color: rgb(64, 209, 64);
+      display: flex;
+      justify-content: center;
+      border-radius: 2rem;
+      font-size: 1.3rem;
+      width:120px;
+      height: auto;
+    }
+    .go a{
+      color:rgb(143, 83, 83);
+    }
+    .poster img{
+      width:480px;
+      height: 480px;
+    }
+</style>
+<body>
+<!--navbar-->
+    <nav class="navbar " style="background-color: #eff9e7">
+        <div class="container-fluid">
+          <a class="navbar-brand link-dark" href="index.html">
+            <img src="/static/weblogo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"/>
+            CureCrafter
+          </a>
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="chat.html">Chat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="true">Settings</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Mode</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+              </ul>
+            </li>
+            <button class="btn btn-outline-success" type="submit">Sign Up</button>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div class="heading"><p>Welcome To CureCrafter</p></div>
+        <div class="msg">
+            <div id="message"><pre>Welcome to home remedy chat bot!! Need natural solution 
+common ailments?
+CureCrafter is here to help with tried and ture remedies. Let's explore
+this a changeable approach together !!
+            </pre>
+            <div class="chat">
+              <div class="go"><a href="chat.html">Let's Start</a></div>
+            </div>
+          </div>
+          <div class="poster"><img src="/static/poster.png" alt="poster" /></div>
+        </div>
+       
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
