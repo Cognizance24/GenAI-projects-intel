@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block title %} Courses {% endblock %} {% block content %}
+
+<section class="py-20 bg-gray-100">
+  <div class="container mx-auto">
+    <h2 class="text-center text-3xl font-bold mb-10">Available Courses</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {% for topic, playlist_id in topics.items %}
+      <div class="rounded overflow-hidden shadow-lg bg-white">
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">{{ topic|title }}</div>
+          <p class="text-gray-700 text-base">
+            Explore the "{{ topic|title }}" playlist.
+          </p>
+        </div>
+        <div class="px-6 pt-4 pb-2">
+          <a
+            href="{% url 'show_topic' topic_name=topic %}"
+            class="inline-block bg-black hover:bg-black-700 text-white font-bold py-2 px-4 rounded"
+            >Learn More</a
+          >
+        </div>
+      </div>
+      {% empty %}
+      <p>No courses available at the moment.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

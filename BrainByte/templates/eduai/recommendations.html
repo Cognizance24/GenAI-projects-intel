@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="flex flex-col items-center justify-center min-h-screen py-12 bg-gray-100">
+    <h2 class="text-2xl font-extrabold tracking-tight text-gray-900">Recommended Courses</h2>
+    {% if recommendations %}
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
+            {% for recommendation in recommendations %}
+                <div class="group relative">
+                    <div class="w-full h-48 bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75">
+                        <img src="{{ recommendation.image_url }}" alt="{{ recommendation.name }}" class="w-full h-full object-center object-cover">
+                    </div>
+                    <h3 class="mt-4 text-sm text-gray-700">
+                        {{ recommendation.name }}
+                    </h3>
+                    <p class="mt-1 text-lg font-medium text-gray-900">
+                        {{ recommendation.topic }}
+                    </p>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="mt-6">
+            <p class="text-gray-600">Based on your preferences, we recommend the following courses:</p>
+            <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10">
+                <div class="group relative">
+                    <a href="/courses/topic/python/">
+                    <div class="w-48 h-48 bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75">
+                        <img src="/static/images/python.png" alt="Introduction to Python for Data Science" class="w-full h-full object-center object-cover">
+                    </div>
+                    <h3 class="mt-4 text-sm text-gray-700">
+                        Introduction to Python
+                    </h3>
+                </a>
+                </div>
+                
+                <div class="group relative">
+                    <a href="/courses/topic/data_science/">
+                    <div class="w-48 h-48 bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75">
+                        <img src="/static/images/data_science.png" alt="Introduction to Python for Data Science" class="w-full h-full object-center object-cover">
+                    </div>
+                    <h3 class="mt-4 text-sm text-gray-700">
+                        Data Science
+                    </h3>
+                </a>
+                </div>
+                
+                <div class="group relative">
+                    <a href="/courses/topic/cloud_computing/">
+                    <div class="w-48 h-48 bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75">
+                        <img src="/static/images/personalized-learning.png" alt="Introduction to Python for Data Science" class="w-full h-full object-center object-cover">
+                    </div>
+                    <h3 class="mt-4 text-sm text-gray-700">
+                        Cloud Computing
+                    </h3>
+                </a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <div class="flex-cols cols-2 mx-8">
+    <div class="mt-10">
+        <h3 class="text-xl font-semibold text-gray-900 justify-center">Estimated Learning Path</h3>
+        <p class="mt-2 text-gray-600">Based on your selections, a 6-month structured learning path encompassing Python programming, data science basics, and introduction to cloud computing is recommended.</p>
+    </div>
+    
+    <div class="mt-10">
+        <h3 class="text-xl font-semibold text-gray-900 justify-center">Personality Type</h3>
+        <p class="mt-2 text-gray-600">Your responses suggest a "Problem Solver" personality type, thriving on tackling challenges and learning through projects. You might enjoy hands-on courses with project-based assessments.</p>
+    </div>
+</div>
+</div>
+{% endblock %}

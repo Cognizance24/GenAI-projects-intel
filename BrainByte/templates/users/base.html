@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BrainByte</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-mono">
+    <header>
+      <nav class="bg-black text-white">
+        <div
+          class="container mx-auto px-4 py-4 flex justify-between items-center"
+        >
+          <a href="/" class="text-xl font-semibold">BrainByte</a>
+          <div>
+            <a href="/" class="px-4 py-2 inline-block">Home</a>
+            <a href="/courses" class="px-4 py-2 inline-block">Courses</a>
+            <a href="/about" class="px-4 py-2 inline-block">About</a>
+            <a
+              href="{% url 'login' %}"
+              class="bg-white text-black px-4 py-2 inline-block rounded"
+              >Sign In</a
+            >
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>{% block content %} {% endblock %}</main>
+
+    <footer class="bg-black text-white">
+      <div class="container mx-auto px-4 py-10">
+        <div class="flex flex-wrap justify-between">
+          <div>
+            <h2 class="font-bold text-lg mb-4">BrainByte</h2>
+            <p>Making personalized learning accessible to everyone.</p>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-4">Follow Us</h3>
+            <a href="https://github.com/rajuljha" target="_blank" "inline-block px-2"
+              >@rajul</a
+            >
+            <a
+              href="https://github.com/tayyab-ilyas"
+              target="_blank"
+              class="inline-block px-2"
+              >@tayyab</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

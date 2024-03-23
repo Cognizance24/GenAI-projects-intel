@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block content %}
+
+    <h5 class="mx-4 my-4 text-2xl font-bold text-gray-900 flex justify-center">Welcome to BrainByte!</h5>
+
+    <div class="container mx-auto mt-10">
+      <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <h2 class="text-xl mb-4">Your Profile</h2>
+          <p><strong>Username:</strong> {{ user.username }}</p>
+          <p><strong>Email:</strong> {{ user.email }}</p>
+      </div>
+  </div>
+  
+  <div class="flex-col justify-center items-center min-h-screen py-12 bg-gray-50">
+    <div class="mx-auto p-8 w-full max-w-md bg-white rounded-lg border border-gray-200 shadow-md">
+      <div class="flex justify-between items-center">
+        <a href="/eduai/questionnaire/">
+        <button type="submit" class="px-4 py-2 bg-black hover:bg-gray-700 text-white text-sm font-medium rounded-lg">
+          Checkout EduAI
+        </button>
+      </a>
+        <a href="http://127.0.0.1:7860" class="px-4 py-2 bg-black hover:bg-gray-700 text-white text-sm font-medium rounded-lg" target="_blank">
+          Go to EduAI Chatbot
+        </a>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
