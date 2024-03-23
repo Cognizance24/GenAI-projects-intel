@@ -1,0 +1,53 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <style>
+        /* Basic grid layout with responsive design */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 10px;
+        }
+        .grid-item {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        /* Color scheme based on the provided image */
+        .color-1 { background-color: #9c27b0; } /* Purple */
+        .color-2 { background-color: #e91e63; } /* Pink */
+        .color-3 { background-color: #00bcd4; } /* Cyan */
+        .color-4 { background-color: #4caf50; } /* Green */
+        .color-5 { background-color: #ffc107; } /* Amber */
+        .logout {
+            margin-top: 20px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ user_type }}!</h1>
+    <div class="grid-container">
+        <div class="grid-item color-1"><a href="/predict-outcomes">Predict Outcomes</a></div>
+        <div class="grid-item color-2"><a href="/books">Books</a></div>
+        <div class="grid-item color-3"><a href="/chatbot">Chatbot</a></div>
+        <div class="grid-item color-4"><a href="/courses">Opted Courses</a></div>
+        <div class="grid-item color-5"><a href="/logout" class="logout">Logout</a></div>
+    </div>
+</body>
+</html>

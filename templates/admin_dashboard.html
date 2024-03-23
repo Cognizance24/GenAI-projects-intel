@@ -1,0 +1,20 @@
+<!-- templates/admin_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+    <ul>
+        {% for student in student_requests %}
+        <li>{{ student.username }} - Access Granted: {{ student.access_granted }}
+            <a href="/admin/approve/{{ student.username }}">Approve</a> | 
+            <a href="/admin/decline/{{ student.username }}">Decline</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/logout">Logout</a>
+</body>
+</html>
