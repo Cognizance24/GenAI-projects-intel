@@ -1,0 +1,19 @@
+<form method="POST">
+    <label for="course_id">Course ID:</label>
+    <input type="number" id="course_id" name="course_id" required>
+    
+    <label for="total_hours_required">Total Hours Required:</label>
+    <input type="number" id="total_hours_required" name="total_hours_required" required>
+    
+    <label for="current_hours_spent">Current Hours Spent:</label>
+    <input type="number" id="current_hours_spent" name="current_hours_spent" required>
+    
+    <label for="increase_hours">Increase Hours (optional):</label>
+    <input type="number" id="increase_hours" name="increase_hours">
+    
+    <label>
+      <input type="checkbox" name="take_tests"> Take Tests
+    </label>
+    
+    <button type="submit">Predict Outcomes</button>
+</form>

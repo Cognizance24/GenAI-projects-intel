@@ -1,0 +1,15 @@
+Flask
+Flask-PyMongo
+Flask-Bcrypt
+huggingface-hub
+gradio
+transformers
+librosa
+datasets
+pymongo
+torchaudio
+daal4py
+intel_extension_for_pytorch
+torch
+MongoDb
+

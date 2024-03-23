@@ -1,0 +1,23 @@
+<!-- templates/register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <h2>Register</h2>
+    <form action="/register" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br>
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br>
+        <label for="college_registration_number">College Registration Number:</label><br>
+        <input type="text" id="college_registration_number" name="college_registration_number" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Register">
+    </form>
+    <a href="/login">Already have an account? Login here</a>
+</body>
+</html>
