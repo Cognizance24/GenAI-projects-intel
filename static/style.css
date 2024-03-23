@@ -1,0 +1,11 @@
+ul.nav li a {
+    color: black !important;
+  }
+  .navbar-brand {
+    color: black;
+  }
+  .nav-pills .nav-item .nav-link.active{
+    background-color: rgb(28, 220, 28);
+    color: white;
+    border-radius:2rem ;
+  }

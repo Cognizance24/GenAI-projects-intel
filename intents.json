@@ -1,0 +1,404 @@
+ {"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day", "Whats up","hey"],
+         "responses": ["Hello!", "Good to see you!", "Hi there, how can I help?"],
+         "context_set": ""
+        },
+        {"tag": "goodbye",
+         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day","Bye Bye","Tata","Talk to you later!!"],
+         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!","Stay Healthy:)","Take Care"],
+         "context_set": ""
+        },
+        {"tag": "name",
+         "patterns": ["what is your name", "what should I call you", "whats your name?","Who r u?","Who are you?"],
+         "responses": ["You can call me Cure Crafter.", "I'm Cure Crafter!", "I'm Cure Crafter aka Chatbot."],
+         "context_set": ""
+        },
+        {"tag":"indigestion",
+         "patterns":["I have early fullness during meal"," I am suffering from discomfort in upper abdomen","Suffering from bloating in upper abdomen","I am suffering from indigestion","Give me the solution of indigestion"],
+         "responses":["You might suffer from indigestion Take 5 gm. crushed rhizome with salt or jaggery twice daily before meal.","You might suffer from indigestion Take 10 ml. juice of anaar, 1 gm. black salt or fried Jira powder with honey or sugar to hold inside mouth for sometime before food.","Take A pinch of powder with a piece of crushed ginger & rock salt should be taken before meal.","Take 5-10 ml. lemon juice with a pinch of salt and pepper before food."],
+         "context_set":""
+        },
+        {"tag":"headache",
+         "patterns":["I have a severe headache","I am suffering from headache","Suffering from headache","Give me the solution of headache"],
+         "responses":["Warm paste of adrak and soonth should be applied over forehead upto 3 times a day.","Dalchini to be rubbed with water on a rough surface & applied to forehead.","Roast some ajwain dry on a tawa. Tie it in a muslin bag and sniff frequently.","Extract 1 teaspoon each juice of tulsi leaves and bel flowers. Add 1 teaspoon honey. Take twice a day.","Tea made by boiling 1 teaspoon fenugreek seeds (methi dana), taken twice or thrice a day provides excellent remedy."],
+         "context_set":""
+        },
+        {"tag":"fever",
+         "patterns":["I have fever","I am suffering from fever","Suffering from fever","Give me the solution of fever"],
+         "responses":["Take 2 gm. pippali powder with honey twice daily.","Take 30 ml. decoction from handful of Tulsi leaves & 5 gm. Dhania thrice a day."],
+         "context_set":""
+        },
+        {"tag":"cold",
+         "patterns":["I have cold and cough","I am suffering from cold and cough","Suffering from cold and cough","Give me the solution of cold and cough"],
+         "responses":["Take 2-5 gm. powder of dry rhizome with jaggery thrice a day in divided doses. 10ml. decoction prepared from a piece of ginger every morning prevents recurrent attack of cold.","Take 20 ml. decoction prepared from. 5 gm. Dhania, 1 gm Methi seeds, little turmeric powder should be taken 2-3 times/day. Little elaichi powder with a tea spoon full of honey 3-4 times day. Even chewing elaichi (Not more than 3 per day) frequently is help full in dry as well as productive cough.","Take Warm decoction of 2 gm. jeera, 5 gm. Dhania, 1 gm. Haldi, 1 gm. Methi powder and little pepper should be taken with honey/sugar with lemon two to three times.Chewing few grains frequently helps in dry as well as productive cough."],
+         "context_set":""
+        },
+        {"tag":"acidity",
+         "patterns":["I have acidity","I have a burning sensation in your chest","Suffering from backwash of food or sour liquid"," I am suffering from sensation of a lumpin your throat","Give me the solution of acidity"],
+         "responses":[" Drink coconut water 3-4 times a day.","Take a tiny piece of jaggery (gur) every hour and just keep it in the mouth and slowly suck it till acidity subsides","Chewing a piece of harad is an age old remedy.","The juice can be mixed with an equal amount of amla juice for better results. To take out amla juice , grate an amla and squeeze the pulp through a clean muslin cloth to get juice."],
+         "context_set":""
+        },
+        {"tag":"acne",
+         "patterns":["I have acne","I am suffering from acnes","Suffering from acnes","Give me the solution of acnes"],
+         "responses":["Clean face with cotton wool dipped in rose water 2-3 times a day.","Do not use soap. Orange peel is very good in the treatment of acne. Grind the peel with some water to a paste and apply on affected parts.","Crush a garlic(lasan) flakes and apply on the face, once or twice a day.","Grind some neem leaves with water to a fine paste. Apply on infected area.","Make a paste of half teaspoon each of sandalwood and turmeric (haldi) powder in a little water and apply."],
+         "context_set":""
+        },
+        {"tag":"anaemia",
+         "patterns":["I have Mouth ulcers","I am suffering from inflamed tongue","Suffering from anaemia","Give me the solution of anaemia"],
+         "responses":["Avoid drinking tea and coffee immediately after meals as the tannin present in these interferes in the absorption of iron from the food."," Take freshly prepared apple juice an hour before meals or just before retiring for the night.","Mix 1 tablespoon amla juice with a ripe mashed banana and eat 2-3 times a day."],
+         "context_set":""
+        },
+        {"tag":"angina pectoris",
+         "patterns":["I am suffering from shortness of breath and weakness and fatigue","Suffering from pain radiating in my arms,shoulders,jaw,neck,or back","I am feeling faint ","I am suffering from angina pectoris"],
+         "responses":["Thoroughly mix 2 teaspoons almond oil with 1 teaspoon rose oil. Rub gently on the chest, morning and evening.","Boil 1 teaspoon fenugreek seeds (methi dana) in one and half cups water. Strain and add 2 teaspoon honey. Take twice daily."],
+         "context_set":""
+        },
+        {"tag":"animal bite",
+         "patterns":["Liquid or pus leaks from the wound of animal bite","An animal bites me","Redness and swelling around the wound of animal bite","Give me the solution of animal bite"],
+         "responses":["Take half teaspoon ground black cumin seeds (shah jeera), twice daily.","Mix equal quantities of castor oil and lime juice. Massage the affected area with this mixture.","Drink 1 cup warm water mixed with lime juice and honey."],
+         "context_set":""
+        },
+        {"tag":"appetite loss",
+         "patterns":["I am suffering from appetite loss","I have reduced interest in food or eating and weight loss","Suffering from physical weakness or fatigue and difficulty in concentrating","Give me the solution of apettite loss"],
+         "responses":["Mix and powder equal quantities of carom seeds (ajwain), fennel seeds (saunf), dried ginger powder (sonth), salt and black cumin seeds (shah jeera).Mix a teaspoon of this powder and a teaspoon of hot ghee to cooked rice and eat frequently .","Take 2 teaspoon of amla juice and mix it with 2 teaspoon honey and 2 teaspoon lime juice. Add 1 cup water and drink on an empty stomach every morning.","Kali mirch Cut 1 piece ginger (adrak) into small pieces. Add one and half cups of water. Boil. Simmer for 2-3 minutes. Add milk and sugar to taste, and take it frequently like tea."],
+         "context_set":""
+        },
+        {"tag":"asthma",
+         "patterns":["I am suffering from asthma","Difficulty in breathing and chest tightness","I have asthma","Suffering from asthma","Give me the solution of asthma"],
+         "responses":["Mix 1 teaspoon honey with half teaspoon cinnamon (dalchini) powder and have at night before going to bed.","Boil carom seeds (ajwain) in water and inhale the steam.","Boil 8-10 flakes of garlic (lasan) in half cup of milk. Have this every night.","Add a handful of drumstick leaves (sahijan) to 1 cup water. Boil. Simmer on lowflame for 3-4 minutes. Cool and strain. Add salt, pepper and lemon juice to taste. Have every day, once or twice a day."],
+         "context_set":""
+        },
+        {"tag":"backache",
+         "patterns":["Back pain is severe","I have a backache","I'm having a backache","I have pain that radiates away from the back into the buttocks ,leg or hip","Give me the solution of backache"],
+         "responses":["Rub some ginger paste on the affected area.","Apply oil of eucalyptus(Tailapatra) on it and do yoga frequently."],
+         "context_set":""
+        },
+        {"tag":"bad odour",
+        "patterns":["I have bad breath","My mouth  smells bad","Suffering from smelling bad","Give me the solution of bad odour"],
+        "responses":["Powder the dried mint (pudina) leaves. Use it as toothpowder.","Use neem twigs as tooth paste."],
+         "context_set":""
+        },
+        {"tag":"baldness",
+         "patterns":["I lost my hair","Suffering from baldness","Baldness is a problem for me","I am losing my hair frequently","I have a family history of baldness","Give me the solution of baldness"],
+         "responses":["Boil 1 cup mustard oil (sarson ka tel) with 4 tablespoon henna (mehendi) leaves. Filter and bottle. Massage on the bald patches regularly.","Grind the remains of tobacco smoked in a hookah and add to boiling mustard oil. Cool and store. Massage on the bald patches regularly."," Grind 1 tablespoon liquorice root pieces (mulathi) in 1 cup milk with one-fourth teaspoon saffron (kesar). Apply this paste on bald patches at bedtime continuously."],
+         "context_set":""
+        },
+        {"tag":"bed wetting",
+         "patterns":["My child frequently make his bed wet","My child is a bed wetter","I have problem of bed wetting","Suffering from bed wetting","Give me the solution of bed wetting"],
+         "responses":["Take 2 walnut halves (akhrot giri) and 1 teaspoon of kishmish before sleeping for 10-12 days.","Grind 2 teaspoon each carom seeds (ajwain) and dried ginger (adrak) into a fine powder. Add a little black salt (kala namak). Take 1 teaspoon of this mixture with 1 cup warm water frequently."],
+         "context_set":""
+        },
+        {"tag":"blackheads",
+         "patterns":["I have blackheads on my face","My face is full of blackheads","Give me the solution of blackheads"],
+         "responses":["Mix 1 teaspoon lime juice in 1 teaspoon finely ground cinnamon (dalchini) powder and apply on affected areas frequently.","Mix 1 teaspoon each turmeric (haldi) powder and juice of fresh coriander (dhania) leaves and apply daily as a face pack before going to sleep."],
+         "context_set":""
+        },
+        {"tag":"bladder stones",
+         "patterns":["I am suffering from abdominal pain ,pressure","I have difficulty in urinating","There is blood in my urine","Suffering from bladder stones","Give me the solution of bladder stones"],
+         "responses":["Boil 2 figs (anjeer) in 1 cup of water. Drink daily for a month."],
+         "context_set":""
+        },
+        {"tag":"blood deficiency",
+         "patterns":["I have blood deficiency in my body","Suffering from blood deficiency","Give me the solution of blood deficiency"],
+         "responses":["Take 2 teaspoon of amla juice and mix it with two teaspoonfuls each of honey and lime. Add 1 teacup water and drink on an empty stomach every morning.","Soak 2 or 3 dried figs (anjeer) in 1 teacup water. Eat them along with milk next morning for a month."],
+         "context_set":""
+        },
+        {"tag":"body heat",
+         "patterns":["I am suffering from body heat","Suffering from loss of consciousness and rapid breathing","Give me solution of body heat"],
+         "responses":["Add 2 to 3 drops of almonds oil to pomegranate (anaar) juice and drink.","Soak 8 to 10 almonds and 1 teaspoon rice overnight. Remove the outer skin. Grind into a fine paste. Mix with some milk and add a pinch of turmeric powder (haldi) and sugar candy (mishri) to taste.Boil and drink","Remove seeds from fresh amla fruits and grind the pulp into a fine paste. Tie it in a muslin cloth and squeeze out the juice. Take 2 teaspoon of this juice and mix it with two teaspoonfuls each honey and lime juice. Add 1 cup water and drink on an empty stomach every morning."],
+         "context_set":""
+        },
+        {"tag":"body pain",
+         "patterns":["Suffering from body pain","I have morning stiffness","My joint ache and muscle pain","Give me solution of body pain"],
+         "responses":["Boil 3 tablespoon powdered nutmeg (jaiphal) in 1 cup sesame oil (til ka tel). Cool and apply on affected parts."],
+         "context_set":""
+        },
+        {"tag":"boils",
+         "patterns":["I am suffering from boils","Give me the solution of boils"],
+         "responses":["Slightly roast a big onion on a naked flame. Mash it and mix in teaspoon each turmeric powder and ghee. Apply and tie a bandage."," Mash the garlic (lasan) cloves and apply externally. Ground neem leaves into a paste and apply on affected parts."],
+         "context_set":""
+        },
+        {"tag":"body swelling",
+         "patterns":["My body swells","Suffering from body swelling","I have a problem of body swelling","Give me the solution of body swelling"],
+         "responses":["Grind black cumin seeds (shah jeera) with a little hot water and apply on affected parts.","For body weakness Soak 8 to 10 almonds and 1 teaspoon rice overnight. Remove the outer skin of almonds. Grind into a fine paste. Mix in some milk and a pinch of turmeric powder (haldi). Boil and drink along with sugar candy (mishri) or ordinary sugar to taste.","Sprinkle the following on a platter of mango slices : 1 teaspoon honey, a pinch of saffron (kesar), cardamom (chhoti illaichi) and rose water (gulab jal). Take twice daily."],
+         "context_set":""
+        },
+        {"tag":"breathing problem",
+         "patterns":["I have difficulty in breathing","Suffering from breathing problem","My nose flares","I breath rapidly","Give me the solution of breathing problem"],
+         "responses":["Mix 1 teaspoon camphor (kapoor) in half cup slightly warmed coconut oil and apply on the chest.","Boil 2 tablespoon fennel seeds (saunf) in 1 cup water till it is reduced to half. Filter. Take 1 tablespoon every morning and evening for a few days.","Boil 3 tablespoon powdered nutmeg (jaiphal) in 1 cup sesame oil (til ka tel). Cool and apply on affected parts."],
+         "context_set":""
+        },
+        {"tag":"bronchitis in children",
+         "patterns":["My child is suffering from bronchitis","My child generally feels short of breath and ill","Give me the solution of bronchitis"],
+         "responses":["Mix 1 teaspoon oil of garlic (lasan) and 3 teaspoon honey and give a small amount three times a day to the child."],
+         "context_set":""
+        },
+        {"tag":"burns by hot water",
+         "patterns":["I burnt myself by hot water","Hot boiling water fell on me","Feeling pain due to burns by hot water","Give me the solution of burn by hot water"],
+         "responses":["Apply mustard paste on the burned area and keep it covered with a damp cloth for 30 minutes. Then, apply a layer of ointment","Boil 1 cup neem bark (neem ki khal) in 4 cups water. Remove from fire and shake liquid. Apply the emerging froth on the affected area. Repeat several times and for several days."],
+         "context_set":""
+        },
+        {"tag":"body burns",
+         "patterns":["Feeling pain on burns","My body burns","My hand burnt while working in kitchen","Suffering from body burns","Give me the solution of body burns"],
+         "responses":["If you have a minor burn, immediately place an ice pack on the burnt area for 10 minutes.","Mash a ripe banana and apply on burns. Bandage with betel leaves (pan ka patta).Combine 4 teaspoon each of lime juice, coconut oil and rub until the betel leaves mixture turns white. Apply on affected parts.","Apply curry leaves (kari patta) as poultices over affected areas. Spread a thin layer of honey over the burn and cover with a dressing. Repeat this regularly every two or three hours till it heals.","Apply mustard paste on the burned area and keep it covered with a damp cloth for 30 minutes. Then, apply a layer of ointment","Burns by fire Immediately apply glycerine on the burnt area.","Burn a handful of mango leaves to ashes and apply this on the affected parts."],
+         "context_set":""
+        },
+        {"tag":"bruises",
+         "patterns":["I hav bruises","I am suffering from bruises","There are blue reddish patch on my skin","Suffering from bruises","Give me the solution of bruises"],
+         "responses":["Slice a raw onion & place over the bruise. Do not apply this to broken skin."],
+         "context_set":""
+        },
+        {"tag":"cataract at early stages",
+         "patterns":["I am at cataract early satge","Started suffering from cataract","Give me the solution of cataract of early stage","I have fading or yellowing of colors and double vision in one eye"],
+         "responses":["Mix 1 teaspoon rose water (gulab jal) with 1 teaspoon fresh lime juice. Add 10 drops of this to the eyes."],
+         "context_set":""
+        },
+        {"tag":"chest congestion",
+         "patterns":["I have mild headache and sore throat","Sometimes coughing with or without mucus with soreness in the chest","I am suffering from chest congestion","Suffering from chest congestion","Give me the solution of chest congestion"],
+         "responses":["Add to half litre of boiling water, 1 teaspoon carom seeds (ajwain) powder along with 1 teaspoon turmeric (haldi) powder. Cool. Take 1 tablespoon of this mixture along with 1 teaspoon honey daily."],
+         "context_set":""
+        },
+        {"tag":"chickenpox in early stage",
+         "patterns":["I have smallpox","I started suffering from chickenpox","Suffering from smallpox","Give me the solution of early stage chickenpox"],
+         "responses":["Include figs (anjeer) in your diet every day."," Rub a nutmeg (jaiphal) lightly against a smooth grinding stone in milk and drink if sudden fear at night without any apparent reasons."],
+         "context_set":""
+        },
+        {"tag":"chills",
+         "patterns":["I am suffering from stiffness of neck and confusion","Suffering from chills","I have irritability and sluggishness","I am suffering from chills","Give me the solution of chills"],
+         "responses":["Instead of your regular hot tea or coffee, have a glass of hot water mixed with honey and lemon.","Put a teaspoon of honey, lemon juice and a little grated ginger in a glass and add hot water. Stir and drink."],
+         "context_set":""
+        },
+        {"tag":"high cholesterol",
+         "patterns":["I have pain in heart and yellowish bumps on the skin","I am suffering from high cholestrol","My cholestrol is high","Suffering fro high cholestrol","Give me the solution of high cholestrol"],
+         "responses":["Finely dice an onion and mix it with 1 cup buttermilk along with one-fourth teaspoon black pepper (kali mirch) powder and drink.","Regularly intake garlic (lasan) cloves for a few days.","Regularly intake coriander (dhania) decoction made by boiling 2 teaspoon dry seed powder in 1 cup water. (Milk and sugar can be added to improve its taste. This could be a welcome substitute for tea or coffee.)"],
+         "context_set":""
+        },
+        {"tag":"cough",
+         "patterns":["I have cough","Suffering from cough","I have bad cough","Give me the solution of cough"],
+         "responses":["Mix equal amounts of honey and ginger (adrak) juice. For better results warm the mixture a little & then have it. Have 1 teaspoon, 2-3-4 times a day.","Three pepper corns (saboot kali mirch) sucked with a pinch of black cumin (shah jeera) and a pinch of salt gives relief.","Mix 1 teaspoon pepper powder with 4 teaspoon gur (jaggery). Make small balls. Suck 3-4 balls/tablets during the day.","Mix equal amounts of pepper powder and sugar candy (mishri) by weight. Mix enough pure ghee to form small balls. Suck one ball/tablet 3-4 times a day."],
+         "context_set":""
+        },
+        {"tag":"constipation in adults",
+         "patterns":["I have fewer than three stools a week and hard,dry or lumpy stools","I am feeling that not all stool has passed","I think I have constipation","Suffering from constipation","Give me the solution of constipation"],
+         "responses":[" Take a hot glass of water with 1 teaspoon honey and juice of half a lemon first thing in the morning and drink one litre of water first thing in the morning."," Soak 6-8 dates (khajoor) in a cup of water at night. Churn in the mixer in the morning & drink first thing in the morning."," Consume approx. 250-300 gms fresh grapes (angoor) every day. When not in season, soak 12-15 raisins (kishmish) in water and have them. Raisins should be soaked for 24-48 hours and eaten early in the morning. The water in which they are soaked should also be drunk."],
+         "context_set":""
+        },
+        {"tag":"constipation in child",
+         "patterns":["My child have fewer than three stools a week and hard,dry or lumpy stools","I think my child have constipation","My child is suffering from constipation","Give me the solution of constipation for my child"],
+         "responses":["Soak 6-8 raisins (kishmish) in hot water (depending on the age). When cool, crush well and strain. When given routinely even to little infants, it helps to regulate bowel movement.","Consumption of 6-8 apricots (khurmani) a day or 2-3 cucumbers (kheera) a day or 1-2 bananas a day is also very useful.Whole wheat flour should be used and processed foods (maida, cheese, confectionery) should be avoided.","Taking 2-3 teaspoon of isabgol in milk or warm water either first thing in the morning or at bed time is very beneficial. Mix half teaspoon honey to half - one cup warm water and have it 2-3 times a day."],
+         "context_set":""
+        },
+        {"tag":"colic in babies",
+         "patterns":["My baby have bright red face and a tight belly","My baby clenching their fists when crying","My baby is suffering from colic","Give me the solution of colic for my baby"],
+         "responses":["Boil a teaspoon of fennel seeds (saunf) in a cup of water. Boil for 2-3 minutes and keep it to cool for 15-20 minutes. Strain.","Add 1-2 teaspoon to every feed of milk of the baby. It helps cure colic."],
+         "context_set":""
+        },
+        {"tag":"muscular cramps",
+         "patterns":["I am suffering from muscular cramps","Suffering from frequently cramps","Give me the solution of muscular cramps"],
+         "responses":["Apply clove oil (laung ka tel) on the affected parts."],
+         "context_set":""
+        },
+        {"tag":"deafness",
+         "patterns":["I am suffering from deafness","I have a hear loss","Suffering from deafness","Give me the solution of deafness"],
+         "responses":["Use raw onion juice as ear drops. Put two drops of lukewarm neem oil inside the ear."],
+         "context_set":""
+        },
+        {"tag":"dandruff",
+         "patterns":["I have a lot of dandruff","Suffering from dandruff","Give me the solution of dandruff","I am suffering from itchy scalp and skin flakes in my scalp"],
+         "responses":["Soak 2 tablespoon fenugreek seeds (methi dana) in water overnight. In the morning grind into a fine paste. Apply all over scalp and leave for half an hour. Wash with Shikakai or mild shampoo.","Wash with Shikakai or mild shampoo. Boil a handful of neem leaves in 4 teacups of water. After cooling and filtering use for rinsing hair"],
+         "context_set":""
+        },
+        {"tag":"dehydration due to diarrhoea",
+         "patterns" : ["How can I treat dehydration caused by diarrhoea?","I am suffering from dehydration due to diarrhoea","Give me the solution of dehydration due to diarrhoea","Suffering from dehydration due to diarrhoea"],
+         "responses":["Soak half a nutmeg (jaiphal) in 2 cups water for over 2-3 hours. Take 1 teaspoon of this infusion and mix in 1 cup fresh coconut water. Drink twice or thrice a day."],
+         "context_set":""
+        },
+        {"tag":"dehydration",
+         "patterns":["Suffering from dehydration","I have dry mouth, feeling thristy and tired and yellowish and strong smell pee","Give me the solution of dehydration"],
+         "responses":["Add one fourth teaspoon salt, 3 teaspoon brown sugar or ordinary sugar and 2 teaspoon lime juice to 1 cup of water, mix well and drink."],
+         "context_set":""
+        },
+        {"tag":"diabetes",
+         "patterns":["I am suffering from diabetes","I have itchy skin,blurry vision and weakness","Suffering from frequent urination and excessive hunger","Give me the solution of diabetes"],
+         "responses":[" A tablespoon of amla juice mixed with a cup of fresh bitter gourd (karela ) juice and taken daily for 2 months will reduce blood sugar.","Take dry tender leaves of the mango tree in the shade. Powder and preserve them. Half a teaspoon of this powder twice a day in the morning and evening proves beneficial.","3-4 teaspoons juice of bitter gourd (karela), taken every morning on an empty stomach gives good results.","Coarsely powder fenugreek seeds (methi dana) and have 1-2 teaspoon in the morning everyday."," Eating 10 fresh fully grown curry leaves (kari patta) every morning for 3 months is said to prevent diabetes due to heredity factors.","Soak 2 teaspoon fenugreek seeds (methi dana) in 1 cup water at night. Drink this water first thing in the morning and preferably eat the seeds too.","Chew 8-10 basil (tulsi) leaves in the morning."],
+         "context_set":""
+        },
+        {"tag":"guidelines of a diabetics diet",
+         "patterns":["Give some guidelines for diabetic diet","Guidelines for diabetic diet"],
+         "responses":["Eat plenty of vegetables like lettuce (salaad patta), tomato and fruits. Use the following fruits and vegetables sparingly and with caution: banana, seedless grapes (angoor), cheeku, leechi, custard apple (sharifa), dry fruits, mango, raisins (kishmish), potatoes, jackfruit (kathal), carrots (gajar), peas (mattar), beans, sweet potato (shakarkandi), beetroot (chukandar). Foods rich in fibre should be preferred. Daily intake of calories should be restricted.Use proteins moderately. Milk & nuts intake to be restricted to the minimum whereas have plenty of curds and buttermilk (chhach). Avoid all refined foods & sweets. Drink 8-10 glasses of water daily.For diabetes, diet restriction & light exercise like walking is a must as this controls the sugar level. Grape fruit is a splendid thing in the diet of a diabetic. Have 3 fruits at a time, 3 times daily."],
+         "context_set":""
+        },
+        {"tag":"dipression",
+         "patterns":["Suffering from dipression","I am depressed","Lossing interest in everything","I am generally fellig lonely and don't want to do anything","I am feeling empty mood, anxious, I am a loser and tired most of the time","Just feeling noone can understand me,I am wrong in everyone's life","I am feeling I don't deserve anything and want to die","How to cure my dipression","Give me the solution of dipression","I want to die"],
+         "responses":["Boil one fourth teaspoon powdered cardamom (chhoti illaichi) seeds in thin tea water and drink.","Mix 1/8 teaspoon nutmeg (jaiphal) powder with 1 tablespoon freshly extracted amla juice. Take 3 times a day."],
+         "context_set":""
+        },
+        {"tag":"dental problems",
+         "patterns":["I am suffering from mild to sharp pain when eating","My toothaches","Suffering from tooth sensitivity","Suffering from dental problems","Give me the solution of dental problems"],
+         "responses":["Turmeric (haldi), burnt, and finely powdered, can be used as toothpowder."],
+         "context_set":""
+        },
+        {"tag":"delivery Of babies",
+         "patterns":["What should I do for delivery of baby","My back is pain due to delivery of baby","Suffering from contractions or tightenings","Give me the solution of problems due to delivery of baby"],
+         "responses":["Mix 3 teaspoon lime juice, one fourth teaspoon powdered black pepper and 1 teaspoon honey in 1 cup water. Drink for 3 months."],
+         "context_set":""
+        },
+        {"tag":"diarrhoea",
+         "patterns":["I have belly cramps or pain and bloating","Suffering from diarrhoea","I am suffering from diarrhoea","Give me the solution of diarrhoea"],
+         "responses":["Combine 1 teaspoon each powdered ginger (adrak), powdered cumin (jeera) and powdered cinnamon (dalchini) with honey and make into a thick paste. Take 1 teaspoon thrice daily.","Boil 1 teaspoon cumin seeds (jeera) in a glass of water. Add to this 1 teaspoon fresh juice of coriander leaves (dhania) and a pinch of salt. Drink twice daily after meals for 2-3 days."," Mash 1 ripe banana along with a pinch of salt and 1 teaspoon tamarind pulp (imli ka guda). Take twice a day.","Drinking a strong cup of unsweetened black tea is very effective for stopping diarrhoea.","Peel an apple and shred it. Keep the shredded pieces in a plate for approximately 20 minutes until they turn brown in colour, and then eat them.","Take every night, 3 cloves of garlic (lasan), chopped and boiled in milk.","Make a paste of 1 green chilli along with 2 tablespoon lime juice and Â½ teaspoon camphor (kapur). Take one fourth teaspoon of this paste. 2 or 3 teaspoon coriander seeds (saboot dhania) soaked overnight in water and taken next morning with 1 cup buttermilk (chhach).","Mix tea and water and drink it."],
+         "context_set":""
+        },
+        {"tag":"diarrhoea due to indigestion",
+         "patterns":["Suffering from diarrhoea due to indigestion of food","How to treat diarrhoea due to indigestion of food", "I have diarrhoea due to indigestion of food","Give me the solution of diarrhoea due to indigestion of food"],
+         "responses":["Insert one fourth teaspoon nutmeg (jaiphal) powder inside a ripe banana and eat."],
+         "context_set":""
+        },
+        {"tag":"ear infection",
+         "patterns":["I have pain in my ear and feeling difficulty in hearing","Suffering from ear infection","I am suffering from ear infection","Give me the silution of ear infection"],
+         "responses":["Extract 1 teaspoon juice from mango leaves. Slightly warm and use as ear drops when bearably hot."],
+         "context_set":""
+        },
+        {"tag":"boils inside ear",
+         "patterns":["I have itching and irritation in ear","There might be boils in my ear","I have a severe pain in my ear","Suffering from boils in ear","Give me the soultion of boils in ear"],
+         "responses":["Heat 2 teaspoon mustard oil. Add half teaspoon carom (ajwain) seeds and one or two flakes of crushed garlic (lasan). Boil till they turn red. Filter. Use as ear drops."],
+         "context_set":""
+        },
+        {"tag":"pain due to boils in ear",
+         "patterns":["I am suffering from pain due to boils in my ear","Suffering from pain due to bois in ear","Give me the solution of pain due to boils in ear"],
+         "responses":["Heat 1 teaspoon each of garlic (lasan) and carom seeds (ajwain) in 2 tablespoon gingelly oil (til ka tel) till they turn red in colour. Strain and cool. When cooled to body temperature, put some drops into the ears."],
+         "context_set":""
+        },
+        {"tag":"eye aching",
+         "patterns":["I am suffering from irritation in eye","My eye is paining very much","My eye become watery and start paining frequently","Give me the solution of eye ach"],
+         "responses":["Powder equal quantities of liquorice (mulathi) and cumin (jeera). Take one fourth teaspoon every day along with 1 teaspoon honey for a month.","Mash 1 ripe banana along with a little curd and water; take twice a day."," Mix the juice of bottle gourd (karela) and sesame oil (til ka tel) in the ratio of 4:1, and heat till the moisture is evaporated completely. Once cool, use it for massaging the head."],
+         "context_set":""
+        },
+        {"tag":"exhaustion due to overwork",
+         "patterns":["I am always in bad mood and suffering from lack of sleep","I am not able to sleep at nigh and feeling distracted","I am always feeling irritated","Feeling distracted all the time","Give me the solution of exhaustion"],
+         "responses":["Boil one fourth teaspoon powdered cardamom (chhoti illaichi) seeds in thin tea water and drink."],
+         "context_set":""
+        },
+        {"tag":"epilepsy",
+         "patterns":["I have unusuall smells and tastes","Feeling an intense feeling of fear or joy and a strange feeling whiich is hard to describe","Suffering from epilepsy","Might I am suffering from epilepsy","Give me the solution of epilepsy","How can I treat me epilepsy?"],
+         "responses":["Apply fresh lime juice on the head. Massage well before showering off."],
+         "context_set":""
+        },
+        {"tag":"eczema",
+         "patterns":["I have a dark skin around my eyes","I have cry and cracked skin","Suffering from eczema","Might I am suffering from eczema","How can I treat my eczema at home?","Give me the solution of eczema","I am feeling continuous itchiness"],
+         "responses":["Rub a nutmeg (jaiphal) against a smooth stone slab with a little water and make a paste. Apply on affected parts.","It is believed by some rural, old fashioned practitioners that instead of water, one's own early morning saliva can be used for better results.","Add 1 teaspoon camphor (kapoor) to 1 teaspoon sandalwood paste and apply on the affected areas."],
+         "context_set":""
+        },
+        {"tag":"dark circles",
+         "patterns":["I have dark circles around my eyes","The skin around my eyes got dark and I feel fatigue","Give me the solution of dark circles","How can I treat dark circle at home?"],
+         "responses":["Take one teaspoon tomato juice, half teaspoon lemon juice, a pinch of turmeric (haldi) powder & a little gram flour (besan). Make a paste & apply. Leave for 10 minute & wash off.","Drink tomato juice with a few mint leaves, little lemon juice & salt and soak cotton wool in cucumber (kheera) or potato juice & apply around the eyes. You will find a change in 2-3 weeks."],
+         "context_set":""
+        },
+        {"tag":"eyes strain due to screen watching",
+         "patterns":["Having eyes strain due to watching screen","Due to overwork on the computer suffering from eyes strain","Eyes strain due to TV watching","Give me the solution of eyes strain"],
+         "responses":["Boil half teaspoon fennel seeds (saunf) in a cup of water till it is reduced to half. Cool. Use as eye drops (Caution: Beware of contamination)."],
+         "context_set":""
+        },
+        {"tag":"tired eyes",
+         "patterns":["I feel tired eyes always","Suffering from tired eyes","Feeling a constant heaviness on eyes","Give me the solution of tired eyes"],
+         "responses":["Lavender oil offers gentle relief for tired and strained eyes. Add a drop of lavender oil to 500 ml (two and half cups) of water and shake the solution well. Dip two cotton wool pads in the liquid, squeeze out the excess water and place one pad over each eye. If you wear contact lenses, they must be removed beforehand."],
+         "context_set":""
+        },
+        {"tag":"eyesight weakness",
+         "patterns":["My eyesight is getting weak","Having watery eyes and difficulty in seeing","Having a constant headache and watery eyes","Give me the solution for eyesight weakness"],
+         "responses":["Mix seeds of cardamom (chhoti illaichi) along with 1 tablespoon honey. Eat every day.","Boil 2 tablespoon fenugreek (methi) leaves along with half cup moong dal and 10 small onions and eat regularly.Do regular yoga of eyes"],
+         "context_set":""
+        },
+        {"tag":"fainting",
+         "patterns":["Suffering from fainting","Having dizziness and sweating","Give me the solution for fainting","How can I treat fainting at home?"],
+         "responses":["A hot poultice of carom seeds (ajwain) used as dry fomentation for hands and feet."],
+         "context_set":""
+        },
+        {"tag":"fatigue",
+         "patterns":["Having constant headache and dizziness","I am feeling muscle weakness","Give me the solution of fatigue","Suffering from chronic tiredness"],
+         "responses":["Take a glass of grapefruit and lemon juice in equal parts to dispel fatigue and general tiredness after a day's work."],
+         "context_set":""
+        },
+        {"tag":"feet burning",
+         "patterns":["Having a sharp and stabbing pain in my feet","Feeling numbness in the feet","I am skin redness and excess warmth in my feet","Give me the solution of feet burning","How can I treat feet burning at home?"],
+         "responses":["Mash 1 ripe banana along with a little curd and water; take twice a day."],
+         "context_set":""
+        },
+        {"tag":"feet / sole having cracks",
+         "patterns":["Having cracks in sole","Having cracks in feet","Give me the solution of feet cracks","How can I treat sole cracks at home?"],
+         "responses":["Mix equal quantities of glycerin and lemon juice. Apply every night before going to bed. This mixture can be made and stored in a glass bottle.","Massage your feet with castor oil every night (in winters) for 2-3 minutes and then wear socks at night.","Grind equal amounts of neem leaves & turmeric (haldi). Apply on affected area.","Finely grind a handful of henna (mehendi) leaves. Add 2 tablespoon lemon juice and apply on the feet.","Mix the juice of bottle gourd (lauki) and sesame oil (til ka tel) in the ratio 4:1 and heat till all the moisture has evaporated. Bottle and use over cracked skin."],
+         "context_set":""
+        },
+        {"tag":"feet smelling",
+         "patterns":["My feet stinks","I have a sweaty and stinky feets","Suffering from feet stinking","Give me the solution of feet smelling","How can I treat my feet smelling?"],
+         "responses":["Soak feet in strong tea for 20 minutes every day until the smell disappears. To prepare your footbath, brew two tea bags in 500 ml of water for 15 minutes and pour the tea into a basin containing two litres of cool water."],
+         "context_set":""
+        },
+        {"tag":"foot corns",
+         "patterns":["Having hard and flaky skin of foot","I am suffering from foot corns","Give me the solution of foot corns"],
+         "responses":["Tie a fresh slice of lemon over the corn (painful area) and keep it all night.","Massage castor oil on the corns every morning and night before sleeping. Massage for 2-3 minutes so that the oil gets absorbed. In 3-4 weeks the corns will disappear.","Mash 1-2 cloves (laung) & garlic (lasan) and tie over the corns. Keep overnight."],
+         "context_set":""
+        },
+        {"tag":"athlete's foot",
+         "patterns":["I am having scaly,peeling or cracked skin between the toes","I am suffering from athlete's foot","Suffering from itchiness,especially right after taking off shoes and socks","Give me the solution for athlete's foot"],
+         "responses":["Keeping your feet clean and dry is enough to discourage the growth of this fungal infection. Remember, it is infectious and you must keep and wash your shoes, socks and towel separately.","To soothe the broken areas of your feet, simply soak them for 10 minutes in a footbath of apple cider vinegar mixed with water."],
+         "context_set":""
+        },
+        {"tag":"feverishness",
+         "patterns":["I am feeling dullness and little fevereishness","Feeling dizziness and feverishness","Give me the solution of feeling feverishness"],
+         "responses":["Mix 1 teacup fresh lemon juice in tender coconut water and drink."],
+         "context_set":""
+        },
+        {"tag":"gas problem",
+         "patterns":["I am feeling pain in stomach and chest due to gas","I have a feeling of fullness and passes the gas frequently","Give me the solution of my gas problem","Suffering from gas"],
+         "responses":["Instead of wheat you can have rice or chapatis of maize, jawar or bajara."," Mix one fourth teaspoon dry ginger powder (sonth) with a pinch of asafoetida (hing).Make a paste of this and apply on the belly button.Avoid the food which make gas."],
+         "context_set":""
+        },
+        {"tag":"guidelines of a gas patient diet",
+         "patterns":["Give me some guidelines for diet while having gas","Some suggestion for diet while suffering from gas"],
+         "responses":[ "Gas patients should avoid foods that are high in fat, sugar or starch. They should eat plenty of vegetables like spinach, cabbage, lettuce, etc.","Avoid heavy (fried), spicy food. Do not eat very large meals, instead eat small meals. Try to eat a little, every 2 hours, so that the gap between the meals is not too big. Do some exercise. Even a walk will do wonders."],
+         "context_set":""
+        },
+        {"tag":"hair dullness and coarseness",
+         "patterns":["Suffering from hair dullness and coarseness","I am having dull hair","Give me the solution of hair dullness and coarseness","How can I treat my dull hair at home?"],
+         "responses":["Grind fresh fenugreek leaves (methi) to a paste and apply the leaf paste over the scalp before a bath."],
+         "context_set":""
+        },
+        {"tag":"hair falling",
+         "patterns":["I have lossing my hair","Becoming bald due to hair fall","How can I stop my hair fall?","Give me the solution to stop hair fall"],
+         "responses":["Apply a little almond oil (badam ka tel) on scalp frequently and massage.","Take a handful of neem leaves and boil them in 4 cups water. After cooling and filtering, use the decoction for rinsing hair.","Mix equal quantities of dried curry leaves (curry patta), lime peel (nimbu ka chilka), Shikakai, fenugreek seeds (methi daana) & green gram (moong saboot) and grind them finely. Store and use as a substitute for soap or shampoo.","Apply fenugreek (methi) seeds, ground with some water and the paste on the head. Allow to soak at least for 40 minutes before washing. Use every morning for a month."],
+         "context_set":""
+        },
+        {"tag":"hair greying",
+         "patterns":["I am too young still my hair is stated greying","The colour of my hair is becoming grey","My hair turning grey in colour","Give me the solution for hair greying"],
+         "responses":["Wet a lemon half and rub lemon juice into the scalp well. Wash off after it turns dry.","Grind 1 tablespoon each, pulp of amla and lime juice. Massage this into the hair before going to bed. Wash it next morning.","Soak shredded ginger (adrak) in honey. Eat a spoonful every morning."],
+         "context_set":""
+        },
+        {"tag":"hair thinning",
+         "patterns":["My hair becoming thin","Suffering from hair thinning","Give me the solution of hair thinning"],
+         "responses":["Bathe the hair in 1 cup coconut milk twice or thrice a week for a few months."],
+         "context_set":""
+        },
+        {"tag":"head heaviness",
+         "patterns":["I am having a feeling of heaviness in my head","Give me the solution for head heaviness","How can I treat head heaviness"],
+         "responses":["Grind the fresh amla fruits into a fine paste and apply on affected parts.","Grind 2 to 3 cloves (laung) into a fine paste along with half teaspoon dried ginger (sonth) and apply on nose, forehead"],
+         "context_set":""
+        },
+        {"tag":"heart problem",
+         "patterns":["I have shortness in breath and swelling in legs","My I am suffering from some heart problem","I feel a pain in my chest sometimes","Give me the solution of heart problems","I am suffering from heart problems"],
+         "responses":["Eat one fourth teaspoon asafetida (hing) along with one large raisin (kishmish) every day."," Regular intake of ripe bananas strengthens the heart."],
+         "context_set":""
+        },
+        {"tag":"hiccups",
+         "patterns":["My hiccups are not stoping","Irritated due to non stop hiccups","Suffering from non stop hiccups","Give me the solution of hiccups"],
+         "responses":["Drink half glass water, slowly.Keep a teaspoon of sugar in your month and suck slowly.","Hold your breath for 2-3 minutes."," Swallow half teaspoon mustard seeds (sarson) mixed with half teaspoon pure ghee. Grind 4 cardamom (chhoti illaichi) well. Boil it in two and half cups or half litre water. When about 1 cup water remains, remove from fire and sieve it through a muslin cloth. Let it cool. When warm, drink a glassful. Works like magic."," Suck 2-3 small pieces of fresh ginger (adrak). This helps in hiccups which keep occurring again and again."],
+         "context_set":""
+        },
+        {"tag":"high blood pressure",
+         "patterns":["Suffering from high blood pressure?","I have high BP","Sometimes my nosebleeds due to high blood pressure","Give me the solution of high blood pressure"],
+         "responses":["Restrict salt intake and drink plenty of fluids (at least 8-10 glasses of water daily) Drink curry leaves (curry patta) juice initially 3 times a day (1 glassful) for 1- 2 months and then reduce to only once in the morning. Have it on empty stomach. For taking out juice: fill your mixy with washed curry leaves, add 3/4 glass water.","Consumption of natural diuretics like coconut water, butter milk, coriander (dhania) juice (make from green coriander in the same way as curry leaves juice) is very beneficial.","Rest, relaxation and good sleep are effective in keeping B.P. under control. Drink coriander (dhania) juice made from fresh dhania (same way as curry leaves juices) 3 times a day."],
+         "context_set":""
+        }
+        
+     ]
+}
