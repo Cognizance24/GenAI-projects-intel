@@ -4,6 +4,12 @@
 
 <br />
 
+### Team - Akatsuki 
+### Members - Shubham Tiwary & Rajat Balyan
+
+
+<br />
+
 
 ## Problem Statement 
 
