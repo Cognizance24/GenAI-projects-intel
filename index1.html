@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrioBytes - GenAi story generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff69b4;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 36px;
+        }
+
+        .chatbox {
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+            max-height: 400px;
+            padding: 20px;
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.05);
+            }
+        }
+
+        .message {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .user-message {
+            background-color: #ff69b4;
+            color: #fff;
+            text-align: right;
+            animation: slideInRight 0.5s ease;
+        }
+
+        .bot-message {
+            background-color: #87ceeb;
+            color: #333;
+            text-align: left;
+            animation: slideInLeft 0.5s ease;
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .input-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input-container input[type="text"],
+        .input-container input[type="number"],
+        .input-container input[type="submit"] {
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            outline: none;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        .input-container input[type="text"],
+        .input-container input[type="number"] {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .input-container input[type="submit"] {
+            background-color: #ff69b4;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .input-container input[type="submit"]:hover {
+            background-color: #ff1493;
+        }
+
+        .images-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .image {
+            margin: 0 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .image:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TrioBytes - GenAi story generator</h1>
+        <div class="chatbox" id="chatbox">
+            <div class="message bot-message animated fadeInLeft">Welcome! Let's generate some stories together.</div>
+        </div>
+        <form id="chatForm" class="input-container">
+            <input type="text" id="genreInput" autocomplete="off" placeholder="Enter a genre (ex: comedy)...">
+            <input type="text" id="starterTextInput" autocomplete="off" placeholder="Say something to start with...">
+            <input type="number" id="wordLimitInput" placeholder="Enter word limit...">
+            <input type="submit" id="submitBtn" value="Generate Story">
+        </form>
+
+        <div class="images-container" id="imagesContainer">
+            <!-- Images will be dynamically added here -->
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#submitBtn').click(function(event) {
+                event.preventDefault();
+                var genre = $('#genreInput').val();
+                var starterText = $('#starterTextInput').val();
+                var wordLimit = $('#wordLimitInput').val();
+                generateStory(genre, starterText, wordLimit);
+            });
+
+            function generateStory(genre, starterText, wordLimit) {
+                $.ajax({
+                    type: 'POST',
+                    url: '/generate',
+                    data: {
+                        genre: genre,
+                        starter_text: starterText,
+                        word_limit: wordLimit
+                    },
+                    success: function(response) {
+                        var storyOutput = '<div class="message bot-message animated fadeInLeft"><strong>Generated Output</strong><br>';
+                        storyOutput += '<p><strong>Topic:</strong> ' + genre + '</p>';
+                        storyOutput += '<p><strong>Starter:</strong> ' + starterText + '</p>';
+                        storyOutput += '<p><strong>Word Limit:</strong> ' + wordLimit + '</p>';
+                        storyOutput += '<p><strong>Story:</strong> ' + response.story + '</p>';
+                        storyOutput += '</div>';
+                        $('#chatbox').html(storyOutput);
+
+                        var imagesContainer = $('#imagesContainer');
+                        imagesContainer.empty(); // Clear previous images
+                        // Add images to the container
+                        for (var i = 0; i < response.images.length; i++) {
+                            var imageData = response.images[i];
+                            var imageElement = '<img src="' + imageData + '" class="image" alt="Generated Image">';
+                            imagesContainer.append(imageElement);
+                        }
+                    },
+                    error: function() {
+                        $('#chatbox').html('<div class="message bot-message animated fadeInLeft"><strong>Error:</strong> Oops! Something went wrong.</div>');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
